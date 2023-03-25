@@ -1,0 +1,8 @@
+C:\Users\Samy Tetrault\Documents\GitHub\LinqToSql\linqToSqlSamyAnthony\linqToSqlSamyAnthony\bin\Debug\linqToSqlSamyAnthony.exe.config
+C:\Users\Samy Tetrault\Documents\GitHub\LinqToSql\linqToSqlSamyAnthony\linqToSqlSamyAnthony\bin\Debug\linqToSqlSamyAnthony.exe
+C:\Users\Samy Tetrault\Documents\GitHub\LinqToSql\linqToSqlSamyAnthony\linqToSqlSamyAnthony\bin\Debug\linqToSqlSamyAnthony.pdb
+C:\Users\Samy Tetrault\Documents\GitHub\LinqToSql\linqToSqlSamyAnthony\linqToSqlSamyAnthony\obj\Debug\linqToSqlSamyAnthony.csproj.AssemblyReference.cache
+C:\Users\Samy Tetrault\Documents\GitHub\LinqToSql\linqToSqlSamyAnthony\linqToSqlSamyAnthony\obj\Debug\linqToSqlSamyAnthony.csproj.SuggestedBindingRedirects.cache
+C:\Users\Samy Tetrault\Documents\GitHub\LinqToSql\linqToSqlSamyAnthony\linqToSqlSamyAnthony\obj\Debug\linqToSqlSamyAnthony.csproj.CoreCompileInputs.cache
+C:\Users\Samy Tetrault\Documents\GitHub\LinqToSql\linqToSqlSamyAnthony\linqToSqlSamyAnthony\obj\Debug\linqToSqlSamyAnthony.exe
+C:\Users\Samy Tetrault\Documents\GitHub\LinqToSql\linqToSqlSamyAnthony\linqToSqlSamyAnthony\obj\Debug\linqToSqlSamyAnthony.pdb

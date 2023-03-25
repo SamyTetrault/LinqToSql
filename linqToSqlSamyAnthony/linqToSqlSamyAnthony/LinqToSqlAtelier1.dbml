@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="samyAnthoLinqToSql" Class="LinqToSqlAtelier1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=PC-SAMY\SQLEXPRESS;Initial Catalog=samyAnthoLinqToSql;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False" SettingsObjectName="linqToSqlSamyAnthony.Properties.Settings" SettingsPropertyName="samyAnthoLinqToSqlConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Departments" Member="Departments">
+    <Type Name="Department">
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DepartmentName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DepartmentCode" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Department_Employee" Member="Employees" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="Employee" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employees" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ManagerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Employee_Employee" Member="Employees" ThisKey="EmployeeID" OtherKey="ManagerID" Type="Employee" />
+      <Association Name="Department_Employee" Member="Department" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="Department" IsForeignKey="true" />
+      <Association Name="Employee_Employee" Member="Employee1" ThisKey="ManagerID" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.GetEmployeeListWithDepartment" Method="GetEmployeeListWithDepartment">
+    <ElementType Name="GetEmployeeListWithDepartmentResult">
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DepartmentName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UpdateEmployeeFirstName" Method="UpdateEmployeeFirstName">
+    <Parameter Name="EmployeeID" Parameter="employeeID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NewFirstName" Parameter="newFirstName" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetDepartmentWithMostEmployees" Method="GetDepartmentWithMostEmployees">
+    <ElementType Name="GetDepartmentWithMostEmployeesResult">
+      <Column Name="DepartmentName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetActiveEmployeeNames" Method="GetActiveEmployeeNames">
+    <ElementType Name="GetActiveEmployeeNamesResult">
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DeleteDepartmentForManager" Method="DeleteDepartmentForManager">
+    <Parameter Name="DepartmentID" Parameter="departmentID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ManagerID" Parameter="managerID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
